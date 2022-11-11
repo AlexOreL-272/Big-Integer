@@ -1,5 +1,7 @@
 #include "big_integer.hpp"
 
+using namespace std;
+
 template <typename T, typename U>
 void TestEqual(T num1, U num2, bool ans = true) {
   BigInt a(num1);
@@ -28,8 +30,6 @@ template <typename T, typename U>
 void TestCombo(T num1, U num2) {
   BigInt a(num1);
   BigInt b(num2);
-
-  //cout << a << " : " << b << " : " << a - b << '\n';
 
   EXPECT_EQ(a + b, num1 + num2);
   EXPECT_EQ(a - b, num1 - num2);
@@ -431,20 +431,15 @@ void TEST_DECR() {
 }
 
 int main() {
-//  TEST_CONSTRUCTORS();
-//  TEST_CMP();
-//  TEST_PLUS();
-//  TEST_MINUS();
-//  TEST_COMBO();
-//  TEST_MUL();
+  TEST_CONSTRUCTORS();
+  TEST_CMP();
+  TEST_PLUS();
+  TEST_MINUS();
+  TEST_COMBO();
+  TEST_MUL();
   TEST_DIV();
   TEST_MOD();
-//  TEST_UNARY_MINUS();
-//  TEST_INCR();
-//  TEST_DECR();
-
-
-  //TestDecrement(123);
-  //TestDecrement(1);
-  //TestDecrement(1e9 + 1);
+  TEST_UNARY_MINUS();
+  TEST_INCR();
+  TEST_DECR();
 }
